@@ -5,7 +5,8 @@ import os
 extension = Extension("pesq_core",
                       sources=["pypesq/pesq.c", "pypesq/dsp.c", "pypesq/pesqdsp.c", "pypesq/pesqio.c", "pypesq/pesqmain.c", "pypesq/pesqmod.c"],
                       include_dirs=[os.path.join(np.get_include(), 'numpy')], 
-                      language='c++')
+                      language='c++',
+                      extra_link_args=["-stdlib=libc++", "-mmacosx-version-min=10.9"])
 
 setup(name='pypesq',
     version='1.0',
