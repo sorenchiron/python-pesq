@@ -10,6 +10,19 @@ python setup.py install
 pip install https://github.com/vBaiCai/python-pesq/archive/master.zip
 ```
 
+## About this fix
+
+The original error message when installed on MacOS platform is like this:
+```
+clang: warning: libstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9 [-Wdeprecated]
+    ld: library not found for -lstdc++
+    clang: error: linker command failed with exit code 1 (use -v to see invocation)
+    error: command 'g++' failed with exit status 1
+```
+
+The problem is fixed by explicitly designate cpp library flags inside the install script. More information can be found in the reference link.
+
+
 ## HOW TO USE
 ```python
 import soundfile as sf
@@ -33,10 +46,9 @@ OWNERS of PESQ ARE:
 * [kennethreitz/setup.py](https://github.com/kennethreitz/setup.py)
 * [massover/accel](https://github.com/massover/accel)
 
-#  TODO
-1. More test.
-2. I'm not sure whether to add the wav normalization.
-
 # HINT
 The PESQ contain 3 types of values: `NB PESQ MOS`, `NB MOS LQO`, `WB MOS LQO`.
 This package only return the `NB PESQ MOS` score, which represents the `Raw MOS` for `narrowband handset listening`.
+
+# REFERENCE
+https://github.com/pandas-dev/pandas/issues/23424
