@@ -1,8 +1,12 @@
-# PyPESQ (WIP)
+# PyPESQ (WIP) - fixed version for MacOS
 Pypesq is a python wrapper for the PESQ score calculation C routine. It only can be used in evaluation purpose.
 
 ## INSTALL
 ```
+# download first, extract and execute:
+python setup.py install
+
+# or you can go back and use the original version:
 pip install https://github.com/vBaiCai/python-pesq/archive/master.zip
 ```
 
